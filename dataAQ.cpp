@@ -30,6 +30,15 @@ void dataAQ::createStateDemogData(std::vector<shared_ptr<demogData>> theData) {
   //std::cout << theStates.size() << "\n"; //deboog
 }
 
+void dataAQ::createStatePoliceData(std::vector<shared_ptr<psData>> theData) {
+  for (auto entry : theData) {
+    std::string currentState = entry->getState();
+    if (!psStates.count(currentState)) {
+      psStates.insert(std::make_pair(currentState, std::make_shared<psState>(currentState, theData)));
+    }
+  }
+}
+
 //return the name of the state with the largest population under age 5
 string dataAQ::youngestPop() {
 	//FILL in
@@ -110,6 +119,15 @@ string dataAQ::belowPoverty() {
   }
   return usurper; 
 } 
+
+std::ostream& operator<<(std::ostream&out, const dataAQ &allStateDemogData) 
+{
+  for (auto entry : allStateDemogData.theStates)
+  {
+    out << *entry.second;
+  }
+  return out;
+}
 
 //sort and report the top ten states in terms of number of police shootings 
 void reportTopTenStatesPS() { 

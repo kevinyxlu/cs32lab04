@@ -24,11 +24,11 @@ psData::psData(string inState, string inName, int inAge, string inGender, string
 /* print police data - fill in*/
 std::ostream& operator<<(std::ostream &out, const psData &PD) {
     out << "Police Shotting Info: " << PD.state;
-    out << "\nPerson name: " ;
-    out << "\nAge: " ;
-    out << "\nGender: " ;
-    out << "\nRace:" ;
-    out << "\nMental Illness:" ;
-    out << "\nFleeing:" ;
+    out << "\nPerson name: " << PD.name;
+    out << "\nAge: " << PD.age;
+    out << "\nGender: " << PD.gender;
+    out << "\nRace:" << PD.race;
+    out << "\nMental Illness:" << PD.signsMentalIllness;
+    out << "\nFleeing:" << PD.flee;
     return out;
 }

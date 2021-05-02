@@ -42,13 +42,14 @@ class dataAQ {
 
     //getters
     shared_ptr<demogState> getStateData(string stateName) { /*fix this*/  return theStates[stateName]; } //FIX 
-    shared_ptr<psState> getStatePoliceData(string stateName) { return nullptr; } //FIX  
+    shared_ptr<psState> getStatePoliceData(string stateName) { return psStates[stateName]; } //FIX  
     
     friend std::ostream& operator<<(std::ostream &out, const dataAQ &allStateDemogData);
 
     private:
        //how will you store the two different data-types?
        map<std::string, shared_ptr<demogState>> theStates;
+       map<std::string, shared_ptr<psState>> psStates;
 
 };
 #endif
