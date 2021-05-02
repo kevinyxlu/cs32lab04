@@ -23,7 +23,15 @@ class psData {
    friend std::ostream& operator<<(std::ostream &out, const psData &PD);
 
 private:
+    string name;
+    int age;
+    char gender;
+    char race;
+    string county;
     const string state;
+    bool signsMentalIllness;
+    string flee;
+    
     //add others
 
 };
