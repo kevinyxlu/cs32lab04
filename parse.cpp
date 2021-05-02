@@ -119,6 +119,9 @@ shared_ptr<psData> readCSVLinePolice(std::string theLine) {
     string race = getFieldNQ(ss);
     string city = getFieldNQ(ss);
     string state = getFieldNQ(ss);
+    string signsMentalIllness = getFieldNQ(ss);
+    getFieldNQ(ss); // skip over threat level
+    string flee = getFieldNQ(ss);
     //finish reading other data fields and initialize police data
 
     return make_shared<psData>(state);

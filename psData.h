@@ -16,18 +16,17 @@ using namespace std;
 class psData {
   public:
     //add appropriate function paramaters to constructor once you add data
-    psData(string inState);
+    psData(string inState, string inName, int inAge, string inGender, string inRace, string inCounty, string inSignsMentalIllness, string inFlee);
 
-    int getNumMentalI();
-    int getFleeingCount();
-    int getCasesOver65();
-    int getCasesUnder18();
-    raceDemogData getRacialData();
-    int getnumMales();
-    int getnumFemales();
-    int getNumberOfCases();    
-    string getState() const { return state; }
     //add getters
+    string getName() const { return name; }
+    int getAge() const {return age; }
+    char getGender() const { return gender; }
+    char getRace() const { return race; }
+    string getCounty() const { return county; }
+    string getState() const { return state; }
+    bool getSignsMentalIllness() const { return signsMentalIllness; }
+    bool getFlee() const { return flee; }
 
    friend std::ostream& operator<<(std::ostream &out, const psData &PD);
 
@@ -37,9 +36,9 @@ private:
     char gender;
     char race;
     string county;
-    const string state;
-    bool signsMentalIllness;
-    string flee;
+    string state;
+    bool signsMentalIllness = false;
+    bool flee = true;
 };
 
 #endif
