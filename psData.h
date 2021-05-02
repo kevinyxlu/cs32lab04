@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 #include <utility>
+#include "raceDemogData.h"
+
 
 using namespace std;
 
@@ -14,9 +16,16 @@ using namespace std;
 class psData {
   public:
     //add appropriate function paramaters to constructor once you add data
-    psData(string inState) : state(inState) {}
+    psData(string inState);
 
-
+    int getNumMentalI();
+    int getFleeingCount();
+    int getCasesOver65();
+    int getCasesUnder18();
+    raceDemogData getRacialData();
+    int getnumMales();
+    int getnumFemales();
+    int getNumberOfCases();    
     string getState() const { return state; }
     //add getters
 
@@ -31,9 +40,6 @@ private:
     const string state;
     bool signsMentalIllness;
     string flee;
-    
-    //add others
-
 };
 
 #endif

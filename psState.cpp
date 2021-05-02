@@ -1,5 +1,11 @@
 #include <iomanip>
 #include "psState.h"
+#include "parse.h"
+
+
+psData::psData(string inState) {
+    return;
+}
 
 /* print state data - as aggregate of all incidents in this state */
 //fill in for lab4
