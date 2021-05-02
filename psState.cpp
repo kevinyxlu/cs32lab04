@@ -38,6 +38,44 @@ psState::psState(string inS, vector<shared_ptr<psData>> psData)
             }
 
             numCases = numCases + 1;
+            
+
+            // possible race char values: 
+            // W for White, A for Asian, B for Black, H for Latinx, O for Other, N for Native American
+            int raceW(0), raceA(0), raceB(0), raceH(0), raceO(0), raceN(0);
+            if(psData[i]->getRace() == 'W') // white
+            {
+                raceW = raceW + 1;
+            }
+            else if(psData[i]->getRace() == 'A') // asian
+            {
+                raceA = raceA + 1;
+            }
+            else if(psData[i]->getRace() == 'B') // black
+            {
+                raceB = raceB + 1;
+            }
+            else if(psData[i]->getRace() == 'H') // latinx
+            {
+                raceH = raceH + 1;
+            }
+            else if(psData[i]->getRace() == 'O') // other
+            {
+                raceO = raceO + 1;
+            }
+            else if(psData[i]->getRace() == 'N') // native american
+            {
+                raceN = raceN + 1;
+            }
+
+            racialData.addWhiteCount(raceW);
+            racialData.addWhiteNHCount(raceW);
+            racialData.addAsianCount(raceA);
+            racialData.addBlackCount(raceB);
+            racialData.addLatinxCount(raceH);
+            racialData.addOtherCount(raceO);
+            racialData.addFirstNationCount(raceN);
+            racialData.addCommunityCount(numCases);
         }
         // otherwise, skip over and go next
     }
@@ -49,12 +87,12 @@ std::ostream& operator<<(std::ostream &out, const psState& PD) {
     out << "State Info: " << PD.state;
     out << "\nNumber of incidents: " << PD.numCases;
     out << std::setprecision(2) << std::fixed;
-    out << "\nIncidents with age \n(over 65): ";
-    out << "\n(19 to 64): ";
-    out << "\n(under 18): ";
-    out << "\nIncidents involving fleeing: ";
-    out << "\nIncidents involving mental illness: ";
-    out << "\nMale incidents: " <<  " female incidents: ";
-    out << "\nRacial demographics of state incidents: ";
+    out << "\nIncidents with age \n(over 65): " << PD.casesOver65;
+    out << "\n(19 to 64): " << PD.numCases - PD.casesOver65 - PD.casesUnder18;
+    out << "\n(under 18): " << PD.casesUnder18;
+    out << "\nIncidents involving fleeing: " << PD.fleeingCount;
+    out << "\nIncidents involving mental illness: " << PD.numMentalIllness;
+    out << "\nMale incidents: " <<  " female incidents: " << PD.numFemales;
+    out << "\nRacial demographics of state incidents: " << PD.racialData;
     return out;
 }

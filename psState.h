@@ -17,7 +17,7 @@ public:
     int getFleeingCount() const { return fleeingCount; }
     int getCasesOver65() const { return casesOver65; }
     int getCasesUnder18() const { return casesUnder18; }
-    raceDemogData getRacialData();
+    raceDemogData getRacialData() { return racialData; }
     int getnumMales() const { return numMales; }
     int getnumFemales() const { return numFemales; }
     int getNumberOfCases() const { return numCases; }
@@ -36,6 +36,8 @@ protected:
     int numMales = 0;
     int numFemales = 0;
     int numCases = 0;
+
+    raceDemogData racialData; //default constructor initializes all race counts to 0
     //add others
 };
 
