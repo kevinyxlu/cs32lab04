@@ -97,55 +97,55 @@ int demogData::getPovertyCount() const
 int demogData::getFirstNationCount() const
 {
     int count;
-    count = round((popFirstNation / 100) * totalPopulation2014); //calculate the count
+    count = ((popFirstNation / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getAsianCount() const
 {
     int count;
-    count = round((popAsian / 100) * totalPopulation2014); //calculate the count
+    count = ((popAsian / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getBlackCount() const
 {
     int count;
-    count = round((popBlack / 100) * totalPopulation2014); //calculate the count
+    count = ((popBlack / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getLatinxCount() const
 {
     int count;
-    count = round((popLatinx / 100) * totalPopulation2014); //calculate the count
+    count = ((popLatinx / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getHIPacificIsleCount() const
 {
     int count;
-    count = round((popHIPacificIsle / 100) * totalPopulation2014); //calculate the count
+    count = ((popHIPacificIsle / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getMultiRaceCount() const
 {
     int count;
-    count = round((popMultiRace / 100) * totalPopulation2014); //calculate the count
+    count = ((popMultiRace / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getWhiteCount() const
 {
     int count;
-    count = round((popWhite / 100) * totalPopulation2014); //calculate the count
+    count = ((popWhite / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getWhiteNHCount() const
 {
     int count;
-    count = round((popWhiteNH / 100) * totalPopulation2014); //calculate the count
+    count = ((popWhiteNH / 100) * totalPopulation2014); //calculate the count
     return count;
 }

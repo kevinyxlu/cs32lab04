@@ -89,7 +89,7 @@ psState::psState(string inS, vector<shared_ptr<psData>> psData)
 /* print state data - as aggregate of all incidents in this state */
 //fill in for lab4
 std::ostream& operator<<(std::ostream &out, const psState& PD) {
-    out << "State Info: " << PD.state;
+    out << "**Police shooting incidents:State Info: " << PD.state;
     out << "\nNumber of incidents: " << PD.numCases;
     out << std::setprecision(2) << std::fixed;
     out << "\nIncidents with age \n(over 65): " << PD.casesOver65;

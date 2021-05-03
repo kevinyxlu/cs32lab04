@@ -24,9 +24,10 @@ std::ostream& operator<<(std::ostream &out, const demogState&SD) {
     // persons below poverty: 12.67% and total: 372832
     // Total population: 2942902
     
-    cout << fixed;
-    cout.precision(2);
-    out << "State Info: " << SD.stateName << endl; // State Info: UT
+    //cout << fixed;
+    //cout.precision(2);
+    out << std::setprecision(2) << std::fixed;
+    out << "State info: " << SD.stateName << endl; // State Info: UT
     out << "Number of Counties: " << SD.numCounties << endl; // Number of Counties: 29   
     out << "Population Info:\n"; // Population Info:
     out << "(over 65): " << SD.percentOver65 << "% and total: " << SD.countOver65 << endl; // (over 65): 10.03% and total: 295146
@@ -37,7 +38,7 @@ std::ostream& operator<<(std::ostream &out, const demogState&SD) {
     out << "(high school or more): " << SD.percentHSPlus << "% and total: " << SD.countHSPlus << endl; // (high school or more): 91.01% and total: 2678412
     out << "persons below poverty: " << SD.percentPoverty << "% and total: " << SD.countPoverty << endl;// persons below poverty: 12.67% and total: 372832
 
-    out << "Racial Demographics Info: ";
+    out << "community racial demographics: Racial Demographics Info: ";
     out << std::setprecision(2) << std::fixed;
     out << "\n\% American Indian and Alaska Native";
     out << " percent: " << SD.percentFirstNation;

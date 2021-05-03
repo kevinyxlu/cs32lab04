@@ -15,12 +15,12 @@ class demogData {
     demogData(string inN, string inS, double in65, double in18,
         double in5, int totPop14) :
             name(inN), state(inS), popOver65(in65), popUnder18(in18),
-            popUnder5(in5), popBachelorEduPlus(-1), popHighSchoolEduPlus(-1), totalPopulation2014(totPop14){}
+            popUnder5(in5), popBachelorEduPlus(-1), popHighSchoolEduPlus(-1), totalPopulation2014(totPop14), popInPoverty(-1) {}
 
     demogData(string inN, string inS, double in65, double in18,
         double in5, double inBach, double inHigh, int totPop14) :
             name(inN), state(inS), popOver65(in65), popUnder18(in18),
-            popUnder5(in5), popBachelorEduPlus(inBach), popHighSchoolEduPlus(inHigh), totalPopulation2014(totPop14) {}
+            popUnder5(in5), popBachelorEduPlus(inBach), popHighSchoolEduPlus(inHigh), totalPopulation2014(totPop14), popInPoverty(-1) {}
 
     demogData(string inN, string inS, double in65, double in18,
         double in5, double inBach, double inHigh, double inPov, int totPop14) : 
@@ -74,7 +74,7 @@ private:
     const int totalPopulation2014;
     const double popBachelorEduPlus;
     const double popHighSchoolEduPlus;
-    const double popInPoverty = -1;
+    const double popInPoverty;
 
     const double popFirstNation = -1;
     const double popAsian = -1;

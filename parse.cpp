@@ -69,14 +69,14 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine) {
         getField(ss);
 
     //store initial data as percent (then convert to count)
-    double FirstNation= stod(getField(ss))/100.0;
-    double Asian= stod(getField(ss))/100.0;
-    double Black= stod(getField(ss))/100.0;
-    double Latinx= stod(getField(ss))/100.0;
-    double HIPacificIsle= stod(getField(ss))/100.0;
-    double MultiRace= stod(getField(ss))/100.0;
-    double White= stod(getField(ss))/100.0;
-    double WhiteNH = stod(getField(ss))/100.0;
+    double FirstNation= stod(getField(ss));
+    double Asian= stod(getField(ss));
+    double Black= stod(getField(ss));
+    double Latinx= stod(getField(ss));
+    double HIPacificIsle= stod(getField(ss));
+    double MultiRace= stod(getField(ss));
+    double White= stod(getField(ss));
+    double WhiteNH = stod(getField(ss));
 
     //now skip over some data 
     for (int i=0; i < 6; i++)
@@ -85,7 +85,7 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine) {
     int medHouseIncome = stoi(getField(ss)); //dont use
     //skip per capita
     getField(ss);
-    double belowPoverty = stod(getField(ss))/100.0;
+    double belowPoverty = stod(getField(ss));
 
     //now skip over some data 
     for (int i=0; i < 10; i++)
