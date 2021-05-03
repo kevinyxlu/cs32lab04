@@ -28,6 +28,7 @@ class demogState {
     double getBAup() const { return percentBachelorPlus; }
     double getHSup() const { return percentHSPlus; }
     double getPoverty() const { return percentPoverty; }
+    int getPop() const { return totalPopulation; }
 
     friend std::ostream& operator<<(std::ostream &out, const demogState &SD);
 

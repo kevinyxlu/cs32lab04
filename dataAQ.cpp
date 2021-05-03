@@ -3,6 +3,22 @@
 #include "demogData.h"
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
+
+bool compTeenPop(const std::pair<std::string, shared_ptr<demogState>> &left, const std::pair<std::string, shared_ptr<demogState>> &right) {
+  if (left.second->getpopUnder18() > right.second->getpopUnder18()) return true;
+  return false;
+}
+
+bool compPoliceShootings(const shared_ptr<psState> &left, const shared_ptr<psState> &right) {
+  if (left->getNumberOfCases() > right->getNumberOfCases()) return true;
+  return false;
+}
+
+bool compPoverty(const shared_ptr<demogState> &left, const shared_ptr<demogState> &right) {
+  if (left->getPoverty() > right->getPoverty()) return true;
+  return false;
+}
 
 dataAQ::dataAQ() {}
 
@@ -131,11 +147,37 @@ std::ostream& operator<<(std::ostream&out, const dataAQ &allStateDemogData)
 }
 
 //sort and report the top ten states in terms of number of police shootings 
-void reportTopTenStatesPS() { 
-//Fill in
+void dataAQ::reportTopTenStatesPS() { 
+  std::vector<shared_ptr<psState>> what;
+  for (auto entry : psStates) what.push_back(entry.second);
+  sort(what.begin(), what.end(), compPoliceShootings);
+  std::cout << "Top ten states sorted on Below Poverty data & the associated police shooting data:\n";
+  std::cout << std::setprecision(2) << std::fixed;
+  for (int i = 0; i < 10; i++) {
+    if (what[i]) { //Is a psState
+      shared_ptr<demogState> makeState = theStates[what[i]->getState()];
+      std::cout << what[i]->getState() << "\n";
+      std::cout << "Total population: " << makeState->getPop() << "\n";
+      std::cout << "Police shooting incidents: " << what[i]->getNumberOfCases() << "\n";
+      std::cout << "Percent below poverty: " << makeState->getPoverty() << "\n";
+    }
+  }
 }
 
 //sort and report the top ten states with largest population below poverty 
-void reportTopTenStatesBP(){ 
-//Fill in
+void dataAQ::reportTopTenStatesBP(){ 
+  std::vector<shared_ptr<demogState>> what;
+  for (auto entry : theStates) what.push_back(entry.second);
+  sort(what.begin(), what.end(), compPoverty);
+  //for (auto entry : what) std::cout << entry->getState() << " " << entry->getPoverty() << "\n";
+  std::cout << "Top ten states sorted on Below Poverty data & the associated police shooting data:\n";
+  std::cout << std::setprecision(2) << std::fixed;
+  for (int i = 0; i < 10; i++) {
+    if (what[i]) { //Is a demogState
+      std::cout << what[i]->getState() << "\n";
+      std::cout << "Total population: " << what[i]->getPop() << "\n";
+      std::cout << "Percent below poverty: " << what[i]->getPoverty() << "\n";
+      std::cout << "Police shooting incidents: " << psStates[what[i]->getState()]->getNumberOfCases() << "\n";
+    }
+  }
 }
