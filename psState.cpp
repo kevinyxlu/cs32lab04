@@ -46,32 +46,26 @@ psState::psState(string inS, vector<shared_ptr<psData>> psData)
             if(psData[i]->getRace() == 'W') // white
             {
                 raceW = raceW + 1;
-                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'A') // asian
             {
                 raceA = raceA + 1;
-                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'B') // black
             {
                 raceB = raceB + 1;
-                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'H') // latinx
             {
                 raceH = raceH + 1;
-                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'O') // other
             {
                 raceO = raceO + 1;
-                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'N') // native american
             {
                 raceN = raceN + 1;
-                racialData.addCommunityCount(1);
             }
 
             racialData.addWhiteCount(raceW);
