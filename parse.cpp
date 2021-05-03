@@ -95,7 +95,8 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine) {
  
     //update as needed this is lab3 version
     return make_shared<demogData>(name, state, popOver65, popUnder18,
-            popUnder5, totalPop2014);
+            popUnder5, bachelorDegreeUp, highSchoolUp, belowPoverty, totalPop2014,
+            FirstNation, Asian, Black, Latinx, HIPacificIsle, MultiRace, White, WhiteNH);
 }
 
 //read one line of police data

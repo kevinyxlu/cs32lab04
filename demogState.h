@@ -28,14 +28,7 @@ class demogState {
     double getBAup() const { return percentBachelorPlus; }
     double getHSup() const { return percentHSPlus; }
     double getPoverty() const { return percentPoverty; }
-    /*
-    int getpopOver65Count() const { return countOver65; }
-    int getpopUnder18Count() const { return countUnder18; }
-    int getpopUnder5Count() const { return countUnder5; }
-    int getBAupCount() const { return countBachelorPlus; }
-    int getPop() const { return totalPopulation; }
-    int getHSupCount() const { return countHSPlus; }
-    int getPovertyCount() const { return countPoverty; }*/
+
     friend std::ostream& operator<<(std::ostream &out, const demogState &SD);
 
 
@@ -60,6 +53,26 @@ class demogState {
     int countBachelorPlus = -1; // bachelor degree or more
     int countHSPlus = -1; // high school educated or more
     int countPoverty = -1; // below poverty
+
+    // racial data (percantages)
+    double percentFirstNation = -1;
+    double percentAsian = -1;
+    double percentBlack = -1;
+    double percentLatinx = -1;
+    double percentHIPacificIsle = -1;
+    double percentMultiRace = -1;
+    double percentWhite = -1;
+    double percentWhiteNH = -1;
+
+    // racial data (counts)
+    int countFirstNation = -1;
+    int countAsian = -1;
+    int countBlack = -1;
+    int countLatinx = -1;
+    int countHIPacificIsle = -1;
+    int countMultiRace = -1;
+    int countWhite = -1;
+    int countWhiteNH = -1;
 
 	//DATA here
 };

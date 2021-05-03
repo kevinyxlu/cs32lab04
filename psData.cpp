@@ -15,7 +15,12 @@ psData::psData(string inState, string inName, int inAge, string inGender, string
     {
         signsMentalIllness = true;
     }
-    if(inFlee == "Not fleeing")
+    else if(inSignsMentalIllness == "FALSE")
+    {
+        signsMentalIllness = false;
+    }
+
+    if((inFlee == "Not fleeing") || inFlee == "")
     {
         flee = false;
     }

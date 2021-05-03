@@ -42,30 +42,36 @@ psState::psState(string inS, vector<shared_ptr<psData>> psData)
 
             // possible race char values: 
             // W for White, A for Asian, B for Black, H for Latinx, O for Other, N for Native American
-            int raceW(0), raceA(0), raceB(0), raceH(0), raceO(0), raceN(0);
+            int raceW(0), raceA(0), raceB(0), raceH(0), raceO(0), raceN(0), communityCount(0);
             if(psData[i]->getRace() == 'W') // white
             {
                 raceW = raceW + 1;
+                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'A') // asian
             {
                 raceA = raceA + 1;
+                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'B') // black
             {
                 raceB = raceB + 1;
+                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'H') // latinx
             {
                 raceH = raceH + 1;
+                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'O') // other
             {
                 raceO = raceO + 1;
+                racialData.addCommunityCount(1);
             }
             else if(psData[i]->getRace() == 'N') // native american
             {
                 raceN = raceN + 1;
+                racialData.addCommunityCount(1);
             }
 
             racialData.addWhiteCount(raceW);
@@ -75,7 +81,6 @@ psState::psState(string inS, vector<shared_ptr<psData>> psData)
             racialData.addLatinxCount(raceH);
             racialData.addOtherCount(raceO);
             racialData.addFirstNationCount(raceN);
-            racialData.addCommunityCount(numCases);
         }
         // otherwise, skip over and go next
     }
@@ -92,7 +97,7 @@ std::ostream& operator<<(std::ostream &out, const psState& PD) {
     out << "\n(under 18): " << PD.casesUnder18;
     out << "\nIncidents involving fleeing: " << PD.fleeingCount;
     out << "\nIncidents involving mental illness: " << PD.numMentalIllness;
-    out << "\nMale incidents: " <<  " female incidents: " << PD.numFemales;
+    out << "\nMale incidents: " << PD.numMales <<  " female incidents: " << PD.numFemales;
     out << "\nRacial demographics of state incidents: " << PD.racialData;
     return out;
 }

@@ -125,6 +125,7 @@ std::ostream& operator<<(std::ostream&out, const dataAQ &allStateDemogData)
   for (auto entry : allStateDemogData.theStates)
   {
     out << *(entry.second);
+    out << *(allStateDemogData.psStates.at(entry.first));
   }
   return out;
 }

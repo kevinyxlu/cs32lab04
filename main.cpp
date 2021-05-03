@@ -10,6 +10,9 @@
 using namespace std;
 
 int main() {
+    ofstream myfile;
+    myfile.open("output.txt");
+    myfile << "Writing this to a file.\n";
 
     dataAQ theAnswers;
 
@@ -25,13 +28,15 @@ int main() {
         std::cout << *obj << std::endl;
     }
     
-    /*
+    
     theAnswers.createStateDemogData(theDemogData);
     theAnswers.createStatePoliceData(thePoliceData);
-    cout << theAnswers << endl;
+    myfile << theAnswers << endl;
+
+    myfile.close();
 
 
-
+/*
     cout << "*** the state that needs the most pre-schools**" << endl;
     string needPK = theAnswers.youngestPop();
     cout << *(theAnswers.getStateData(needPK)) << endl;
